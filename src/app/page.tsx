@@ -11,14 +11,15 @@ export default function Home() {
     return(
       <div className="flex h-screen items-center justify-center">
 
-      <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="bg-white rounded shadow-md">
 
-        <p className="text-xl font-semibold mb-4">Welcome {session.user?.name}. Signed In As</p>
+        <img className="w-full h-[250px] rounded object-cover" src={session.user?.image} alt="" />
+        <div className="border-red-600 p-4">
+        <p className="text-xl font-semibold mb-2">Welcome {session.user?.name}. Signed In As</p>
         <p>{session.user?.email}</p>
-        <img src={session.user?.image} alt="" />
 
         <button onClick={() => signOut()} className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">Logout</button>
-
+        </div>
       </div>
         
       </div>
